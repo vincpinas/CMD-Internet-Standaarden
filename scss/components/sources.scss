@@ -1,0 +1,30 @@
+.c-sources {
+    & > p {
+        color: $text-secondary;
+    }
+
+    &__list {
+        margin-top: 5rem;
+        list-style: disc;
+        max-width: 40rem;
+
+        li a {
+            @include font--primary(400);
+            color: $special-primary;
+            transition: $transition-fast;
+        }
+
+        article > a {
+            font-weight: 700;
+        }
+
+        li a:hover {
+            color: $special-secondary;
+            text-shadow: 2px 2px darken(rgba($special-secondary, $alpha: .2), 20%);
+        }
+
+        li p {
+            @include label;
+        }
+    }
+}

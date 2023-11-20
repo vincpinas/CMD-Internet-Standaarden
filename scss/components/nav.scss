@@ -1,0 +1,27 @@
+.c-nav {
+    padding: 2rem;
+    display: flex;
+    background: var(--background-secondary);
+    box-shadow: $box-shadow--primary;
+    
+    &__pageLink {
+        &s {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            gap: 2rem;
+        }
+
+        a {
+            @include h3;
+            @include font--tertiary(500);
+            transition: $transition-fast;
+        }
+
+        a:hover {
+            @include font--secondary(500);
+            color: $special-primary;
+        }
+    }
+}

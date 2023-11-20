@@ -1,0 +1,244 @@
+@import "variables.scss";
+@import "mixins.scss";
+@import "animations.scss";
+@import "components/nav.scss";
+@import "components/pokedex.scss";
+@import "components/pokemon.scss";
+@import "components/additional.scss";
+@import "components/sources.scss";
+
+/* Any imports required multiple times across the site will be imported here. */
+@font-face {
+    font-family: 'PKMNRBYGSC';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/PKMNRBYGSC/PKMN-RBYGSC.eot');
+    src: url('../fonts/PKMNRBYGSC/PKMN-RBYGSC.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/PKMNRBYGSC/PKMN-RBYGSC.woff') format('woff'),
+        url('../fonts/PKMNRBYGSC/PKMN-RBYGSC.ttf') format('truetype'),
+}
+
+@font-face {
+    font-family: 'Pokemon Hollow';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/PokemonHollow/PokemonHollowNormal.eot');
+    src: url('../fonts/PokemonHollow/PokemonHollowNormal.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/PokemonHollow/PokemonHollowNormal.woff') format('woff'),
+        url('../fonts/PokemonHollow/PokemonHollowNormal.ttf') format('truetype'),
+}
+
+@font-face {
+    font-family: 'Pokemon Solid';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/PokemonSolid/PokemonSolidNormal.eot');
+    src: url('../fonts/PokemonSolid/PokemonSolidNormal.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/PokemonSolid/PokemonSolidNormal.woff') format('woff'),
+        url('../fonts/PokemonSolid/PokemonSolidNormal.ttf') format('truetype'),
+}
+
+/* Any CSS beyond this point will be globally applied to the whole document. */
+/* CSS Reset */
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 0;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: "";
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+*,
+*::before,
+*::after {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+body,
+html {
+    background: $background-primary;
+    color: $text-primary;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    main {
+        padding: 2rem 8rem;
+
+        @media #{$tablet-down} {
+            padding: 2rem;
+        }
+    }
+
+    select option {
+        color: $text-primary !important;
+    }
+
+    a,
+    button,
+    input[type="submit"] {
+        text-decoration: none;
+        cursor: pointer;
+        color: $text-primary;
+    }
+
+    button,
+    a,
+    input,
+    select {
+        @include input;
+    }
+
+    h1 {
+        @include h1;
+    }
+
+    h2 {
+        @include h2;
+    }
+
+    h3 {
+        @include h3;
+    }
+
+    h4 {
+        @include h4;
+    }
+
+    h5 {
+        @include h5;
+    }
+
+    h6 {
+        @include h6;
+    }
+
+    p {
+        @include paragraph;
+    }
+
+    label {
+        @include label;
+    }
+
+}
+
+.-bold {
+    font-weight: 800;
+}
+
+.normal {
+    background: #BCBCAC;
+}
+
+.fight {
+    background: #BC5442;
+}
+
+.flying {
+    background: #669AFF;
+}
+
+.poison {
+    background: #AB549A;
+}
+
+.ground {
+    background: #DEBC54;
+}
+
+.rock {
+    background: #BCAC66;
+}
+
+.bug {
+    background: #ABBC1C;
+}
+
+.ghost {
+    background: #6666BC;
+}
+
+.steel {
+    background: #ABACBC;
+}
+
+.fire {
+    background: #FF421C;
+}
+
+.water {
+    background: #2F9AFF;
+}
+
+.grass {
+    background: #78CD54;
+}
+
+.electric {
+    background: #FFCD30;
+}
+
+.psychic {
+    background: #FF549A;
+}
+
+.ice {
+    background: #78DEFF;
+}
+
+.dragon {
+    background: #7866EF;
+}
+
+.dark {
+    background: #785442;
+}
+
+.fairy {
+    background: #FFACFF;
+}
+
+.shadow {
+    background: #0E2E4C;
+}

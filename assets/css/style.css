@@ -1,0 +1,586 @@
+.c-nav {
+  padding: 2rem;
+  display: flex;
+  background: var(--background-secondary);
+  box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.48);
+}
+.c-nav__pageLinks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 2rem;
+}
+.c-nav__pageLink a {
+  font-size: 26px;
+  font-family: "PKMNRBYGSC";
+  font-weight: 700;
+  font-style: normal;
+  line-height: 28px;
+  margin-bottom: 1.5rem;
+  font-family: "Pokemon Hollow";
+  font-weight: 500;
+  font-style: normal;
+  transition: 0.35s;
+}
+@media screen and (max-width: 767px) {
+  .c-nav__pageLink a {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+.c-nav__pageLink a:hover {
+  font-family: "Pokemon Solid";
+  font-weight: 500;
+  font-style: normal;
+  color: #F50022;
+}
+
+.c-pokedex__search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  background-color: #FFFFFF;
+  box-shadow: -4px -4px inset rgba(0, 0, 0, 0.25);
+  border-radius: 0.4rem;
+  padding: 0.3rem;
+  padding-left: 0;
+  margin-bottom: 5rem;
+}
+.c-pokedex__searchInput {
+  background-color: #FFFFFF;
+  outline: none;
+  border: none;
+  height: 4rem;
+  width: 100%;
+  margin: 0;
+  font-family: "PKMNRBYGSC";
+  font-weight: 500;
+  font-style: normal;
+  padding: 0 2rem;
+}
+.c-pokedex__searchAutocomplete {
+  width: 100%;
+}
+.c-pokedex__searchAutocompleteItem {
+  padding: 0 1.5rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  transition: 100ms;
+}
+.c-pokedex__searchAutocompleteItem:hover {
+  background-color: #f2f2f2;
+}
+.c-pokedex__searchAutocompleteItem a {
+  transition: 100ms;
+  font-family: "PKMNRBYGSC";
+  font-weight: 500;
+  font-style: normal;
+  margin: 0;
+  width: 100%;
+}
+.c-pokedex__grid {
+  width: 100%;
+  height: fit-content;
+}
+.c-pokedex__gridItems {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  grid-auto-rows: 10rem;
+  row-gap: 4rem;
+  column-gap: 2rem;
+}
+.c-pokedex__card {
+  background: #FFFFFF;
+  border-radius: 0.4rem;
+  box-shadow: -4px -4px inset rgba(0, 0, 0, 0.25);
+  text-transform: capitalize;
+  transition: 0.35s;
+}
+.c-pokedex__card a {
+  width: 100%;
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-direction: column;
+}
+.c-pokedex__card:hover {
+  background: darkem(#FFFFFF, 5%);
+  transform: translateX(2px) translateY(2px);
+}
+.c-pokedex__card:hover .c-pokedex__cardSprite {
+  scale: 1.1;
+}
+.c-pokedex__cardSprite, .c-pokedex__cardName, .c-pokedex__cardTypes, .c-pokedex__cardNumber {
+  transform: translateY(-2.5rem);
+  margin: 0 !important;
+}
+.c-pokedex__cardTypes {
+  display: flex;
+  gap: 0.5rem;
+}
+.c-pokedex__cardTypes p {
+  padding: 0rem 0.5rem;
+  text-shadow: 2px 2px #6d6d6d;
+  color: #eaeaea;
+  border-radius: 0.3rem;
+  margin: 0;
+}
+.c-pokedex__cardSprite {
+  transition: 0.35s;
+  transform: translateY(-2.5rem);
+  image-rendering: pixelated;
+}
+.c-pokedex__cardNumber {
+  color: #a7c1e4;
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 1rem;
+}
+@media screen and (max-width: 767px) {
+  .c-pokedex__cardNumber {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+.c-pokedex__cardName {
+  font-weight: 800;
+}
+
+.c-additional {
+  display: flex;
+  width: 100%;
+}
+.c-additional__typeChart {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.c-additional__typeChart article {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+.c-additional__typeChart article img {
+  height: 1.2rem;
+  filter: gray saturate(0%) brightness(600%) contrast(1000%);
+}
+.c-additional__typeChart article p {
+  color: #6d6d6d;
+  margin: 0;
+}
+.c-additional__typeChartList {
+  display: flex;
+  flex-direction: column;
+}
+.c-additional__typeChartList > li:not(:last-of-type) {
+  margin-bottom: 1rem;
+}
+.c-additional__typeChartRow {
+  display: flex;
+  flex-direction: row;
+  gap: 0.75rem;
+  align-items: center;
+}
+.c-additional__typeChartRow img {
+  height: 1.2rem;
+}
+.c-additional__typeChartRow p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 6.5rem;
+  margin: 0;
+  border-radius: 0.3rem;
+  color: #eaeaea;
+  text-shadow: 2px 2px #6d6d6d;
+  box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.2);
+}
+.c-additional__typeChartRow li {
+  display: flex;
+  gap: 0.3rem;
+}
+.c-additional__typeChartRow li span {
+  width: 6.5rem;
+}
+
+.c-sources > p {
+  color: #6d6d6d;
+}
+.c-sources__list {
+  margin-top: 5rem;
+  list-style: disc;
+  max-width: 40rem;
+}
+.c-sources__list li a {
+  font-family: "PKMNRBYGSC";
+  font-weight: 400;
+  font-style: normal;
+  color: #F50022;
+  transition: 0.35s;
+}
+.c-sources__list article > a {
+  font-weight: 700;
+}
+.c-sources__list li a:hover {
+  color: #ff7653;
+  text-shadow: 2px 2px rgba(236, 48, 0, 0.2);
+}
+.c-sources__list li p {
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 1rem;
+}
+@media screen and (max-width: 767px) {
+  .c-sources__list li p {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+/* Any imports required multiple times across the site will be imported here. */
+@font-face {
+  font-family: "PKMNRBYGSC";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/PKMNRBYGSC/PKMN-RBYGSC.eot");
+  src: url("../fonts/PKMNRBYGSC/PKMN-RBYGSC.eot?#iefix") format("embedded-opentype"), url("../fonts/PKMNRBYGSC/PKMN-RBYGSC.woff") format("woff"), url("../fonts/PKMNRBYGSC/PKMN-RBYGSC.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Pokemon Hollow";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/PokemonHollow/PokemonHollowNormal.eot");
+  src: url("../fonts/PokemonHollow/PokemonHollowNormal.eot?#iefix") format("embedded-opentype"), url("../fonts/PokemonHollow/PokemonHollowNormal.woff") format("woff"), url("../fonts/PokemonHollow/PokemonHollowNormal.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Pokemon Solid";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/PokemonSolid/PokemonSolidNormal.eot");
+  src: url("../fonts/PokemonSolid/PokemonSolidNormal.eot?#iefix") format("embedded-opentype"), url("../fonts/PokemonSolid/PokemonSolidNormal.woff") format("woff"), url("../fonts/PokemonSolid/PokemonSolidNormal.ttf") format("truetype");
+}
+/* Any CSS beyond this point will be globally applied to the whole document. */
+/* CSS Reset */
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+*,
+*::before,
+*::after {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body,
+html {
+  background: #F5F8FC;
+  color: #000;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+body main,
+html main {
+  padding: 2rem 8rem;
+}
+@media screen and (max-width: 991px) {
+  body main,
+  html main {
+    padding: 2rem;
+  }
+}
+body select option,
+html select option {
+  color: #000 !important;
+}
+body a,
+body button,
+body input[type=submit],
+html a,
+html button,
+html input[type=submit] {
+  text-decoration: none;
+  cursor: pointer;
+  color: #000;
+}
+body button,
+body a,
+body input,
+body select,
+html button,
+html a,
+html input,
+html select {
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 1rem;
+}
+@media screen and (max-width: 767px) {
+  body button,
+  body a,
+  body input,
+  body select,
+  html button,
+  html a,
+  html input,
+  html select {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+body h1,
+html h1 {
+  font-size: 42px;
+  font-family: "PKMNRBYGSC";
+  font-weight: 800;
+  font-style: normal;
+  line-height: 48px;
+  margin-bottom: 1.5rem;
+}
+@media screen and (max-width: 767px) {
+  body h1,
+  html h1 {
+    font-size: 30px;
+    line-height: 33px;
+  }
+}
+body h2,
+html h2 {
+  font-size: 40px;
+  font-family: "PKMNRBYGSC";
+  font-weight: 800;
+  font-style: normal;
+  line-height: 44px;
+  margin-bottom: 1.5rem;
+}
+@media screen and (max-width: 767px) {
+  body h2,
+  html h2 {
+    font-size: 24px;
+    line-height: 28px;
+  }
+}
+body h3,
+html h3 {
+  font-size: 26px;
+  font-family: "PKMNRBYGSC";
+  font-weight: 700;
+  font-style: normal;
+  line-height: 28px;
+  margin-bottom: 1.5rem;
+}
+@media screen and (max-width: 767px) {
+  body h3,
+  html h3 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+body h4,
+html h4 {
+  font-size: 22px;
+  font-family: "PKMNRBYGSC";
+  font-weight: 300;
+  font-style: normal;
+  line-height: 28px;
+  margin-bottom: 0.15rem;
+}
+@media screen and (max-width: 767px) {
+  body h4,
+  html h4 {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+body h5,
+html h5 {
+  font-size: 18px;
+  font-family: "PKMNRBYGSC";
+  font-weight: 300;
+  font-style: normal;
+  line-height: 20px;
+  margin-bottom: 2.5rem;
+}
+@media screen and (max-width: 767px) {
+  body h5,
+  html h5 {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+body h6,
+html h6 {
+  font-size: 16px;
+  font-family: "PKMNRBYGSC";
+  font-weight: 300;
+  font-style: normal;
+  line-height: 18px;
+  margin-bottom: 2.5rem;
+}
+@media screen and (max-width: 767px) {
+  body h6,
+  html h6 {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+body p,
+html p {
+  font-size: 16px;
+  font-family: "PKMNRBYGSC";
+  font-weight: 300;
+  font-style: normal;
+  line-height: 28px;
+  margin-bottom: 1rem;
+}
+@media screen and (max-width: 767px) {
+  body p,
+  html p {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+body label,
+html label {
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 1rem;
+}
+@media screen and (max-width: 767px) {
+  body label,
+  html label {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.-bold {
+  font-weight: 800;
+}
+
+.normal {
+  background: #BCBCAC;
+}
+
+.fight {
+  background: #BC5442;
+}
+
+.flying {
+  background: #669AFF;
+}
+
+.poison {
+  background: #AB549A;
+}
+
+.ground {
+  background: #DEBC54;
+}
+
+.rock {
+  background: #BCAC66;
+}
+
+.bug {
+  background: #ABBC1C;
+}
+
+.ghost {
+  background: #6666BC;
+}
+
+.steel {
+  background: #ABACBC;
+}
+
+.fire {
+  background: #FF421C;
+}
+
+.water {
+  background: #2F9AFF;
+}
+
+.grass {
+  background: #78CD54;
+}
+
+.electric {
+  background: #FFCD30;
+}
+
+.psychic {
+  background: #FF549A;
+}
+
+.ice {
+  background: #78DEFF;
+}
+
+.dragon {
+  background: #7866EF;
+}
+
+.dark {
+  background: #785442;
+}
+
+.fairy {
+  background: #FFACFF;
+}
+
+.shadow {
+  background: #0E2E4C;
+}
+
+/*# sourceMappingURL=style.css.map */
