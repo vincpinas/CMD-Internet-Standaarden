@@ -1,31 +1,8 @@
-import { createEl, fetchGraphQL } from "../scripts/helpers.js"
-
-const typeColors = {
-    'normal': '#BCBCAC',
-    'fighting': '#BC5442',
-    'flying': '#669AFF',
-    'poison': '#AB549A',
-    'ground': '#DEBC54',
-    'rock': '#BCAC66',
-    'bug': '#ABBC1C',
-    'ghost': '#6666BC',
-    'steel': '#ABACBC',
-    'fire': '#FF421C',
-    'water': '#2F9AFF',
-    'grass': '#78CD54',
-    'electric': '#FFCD30',
-    'psychic': '#FF549A',
-    'ice': '#78DEFF',
-    'dragon': '#7866EF',
-    'dark': '#785442',
-    'fairy': '#FFACFF',
-    'shadow': '#0E2E4C'
-};
+import { createEl, fetchGraphQL, typeColors } from "../scripts/helpers.js"
 
 
 export default class Pokedex {
     constructor() {
-        this.baseUrl = "https://pokeapi.co/api/v2";
         this.pokemon = []
 
         this.init();
@@ -35,12 +12,12 @@ export default class Pokedex {
 
         this._registerSearchHandler();
 
-        this.fetchPokedexGQL(251).then(pokemon => {
+        this.fetchPokedexGQL().then(() => {
             this.insertPokemon();
         })
     }
 
-    fetchPokedexGQL(limit = 251, offset = 0) {
+    fetchPokedexGQL(limit = 151, offset = 0) {
         const query = `
             query PokedexListQuery {
                     pokemon_v2_pokemon(limit: ${limit}, offset: ${offset}) {

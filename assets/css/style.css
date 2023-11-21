@@ -1,8 +1,15 @@
 .c-nav {
-  padding: 2rem;
+  position: fixed;
+  width: 100%;
+  padding: 1.6rem 0rem;
   display: flex;
-  background: var(--background-secondary);
+  background: #FFFFFF;
   box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.48);
+  z-index: 999;
+  transition: 0.35s;
+}
+.c-nav.inactive {
+  transform: translateY(-100%);
 }
 .c-nav__pageLinks {
   display: flex;
@@ -129,6 +136,7 @@
   color: #eaeaea;
   border-radius: 0.3rem;
   margin: 0;
+  letter-spacing: -0.5px;
 }
 .c-pokedex__cardSprite {
   transition: 0.35s;
@@ -178,7 +186,7 @@
   flex-direction: column;
 }
 .c-additional__typeChartList > li:not(:last-of-type) {
-  margin-bottom: 1rem;
+  margin-bottom: 0.4rem;
 }
 .c-additional__typeChartRow {
   display: flex;
@@ -193,19 +201,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 6.5rem;
+  width: 6rem;
   margin: 0;
   border-radius: 0.3rem;
   color: #eaeaea;
   text-shadow: 2px 2px #6d6d6d;
   box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.2);
+  letter-spacing: -0.5px;
 }
 .c-additional__typeChartRow li {
   display: flex;
   gap: 0.3rem;
 }
 .c-additional__typeChartRow li span {
-  width: 6.5rem;
+  width: 6rem;
 }
 
 .c-sources > p {
@@ -330,6 +339,7 @@ html {
 }
 body main,
 html main {
+  margin-top: 6.5rem;
   padding: 2rem 8rem;
 }
 @media screen and (max-width: 991px) {
@@ -576,7 +586,7 @@ html label {
 }
 
 .fairy {
-  background: #FFACFF;
+  background: #EB97EB;
 }
 
 .shadow {

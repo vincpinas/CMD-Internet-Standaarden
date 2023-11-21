@@ -1,17 +1,34 @@
 class Nav {
     constructor() {
-        this.navElements = document.querySelectorAll(".c-nav__pageLink a");
+        this.nav = document.querySelector("nav");
+        this.navLinks = document.querySelectorAll(".c-nav__pageLink a");
+        this.lastOffset = 0;
 
         this.init();
+        this._registerScrollListener();
     }
 
     init() {
-        if (!this.navElements) return;
+        if (!this.navLinks) return;
 
-        this.navElements.forEach((element, index) => {
-            if (!window.location.href.toLowerCase().includes(element.href.toLowerCase())) return;
-            element.style.fontFamily = "Pokemon Solid"
-            element.style.color = "#F50022"
+        this.navLinks.forEach((link, index) => {
+            if (!window.location.href.toLowerCase().includes(link.href.toLowerCase())) return;
+            link.style.fontFamily = "Pokemon Solid"
+            link.style.color = "#F50022"
+        })
+    }
+
+    _registerScrollListener() {
+        document.addEventListener("scroll", () => {
+            const scroll = document.documentElement.scrollTop;
+            
+            if(scroll > this.lastOffset) {
+                this.nav.classList.add("inactive")
+            } else {
+                this.nav.classList.remove("inactive")
+            }
+
+            this.lastOffset = scroll;
         })
     }
 }
