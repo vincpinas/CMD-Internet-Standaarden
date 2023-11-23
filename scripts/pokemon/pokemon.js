@@ -41,7 +41,7 @@ export default class Pokemon {
         const next = createEl("li", { class: "c-pokemon__evolutionsNext" })
         next.appendChild(createEl("img", { src: "./assets/icons/arrow.png" }))
 
-        if (this.evolution_chain[index + 1] && this.evolution_chain[index + 1].details) {
+        if (this.evolution_chain[index + 1] && this.evolution_chain[index + 1].details && this.evolution_chain[index + 1].details.min_level) {
           next.appendChild(createEl("p", { innerHTML: `level ${this.evolution_chain[index + 1].details.min_level}` }))
         }
 
