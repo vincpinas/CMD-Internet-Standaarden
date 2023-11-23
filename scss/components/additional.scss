@@ -30,7 +30,7 @@
         flex-direction: column;
 
         & > li:not(:last-of-type) {
-            margin-bottom: 1rem;
+            margin-bottom: 0.4rem;
         }
     }
 
@@ -48,12 +48,13 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 6.5rem;
+            width: 6rem;
             margin: 0;
             border-radius: 0.3rem;
             color: $white;
             text-shadow: 2px 2px $text-secondary;
             box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.2);
+            letter-spacing: -0.5px;
         }
 
         li {
@@ -62,7 +63,7 @@
         }
 
         li span {
-            width: 6.5rem;
+            width: 6rem;
         }
     }
 }

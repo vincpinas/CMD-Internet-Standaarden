@@ -1,0 +1,12 @@
+@mixin rotating {
+    @keyframes rotating {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    animation: rotating 2s ease-in-out infinite forwards;
+}

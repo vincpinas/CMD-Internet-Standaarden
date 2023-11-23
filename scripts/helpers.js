@@ -30,7 +30,7 @@ export const grab = async (url, options = {}) => {
 }
 
 export async function fetchGraphQL(query, variables, operationName) {
-  const result = await fetch(
+  const response = await fetch(
     "https://beta.pokeapi.co/graphql/v1beta",
     {
       method: "POST",
@@ -42,7 +42,7 @@ export async function fetchGraphQL(query, variables, operationName) {
     }
   )
 
-  return await result.json()
+  return await response.json()
 }
 
 export const typeColors = {
@@ -66,4 +66,3 @@ export const typeColors = {
   'fairy': '#EB97EB',
   'shadow': '#0E2E4C'
 };
-

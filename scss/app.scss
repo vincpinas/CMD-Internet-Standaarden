@@ -103,6 +103,7 @@ html {
     height: 100%;
 
     main {
+        margin-top: 6.5rem;
         padding: 2rem 8rem;
 
         @media #{$tablet-down} {
@@ -236,9 +237,30 @@ html {
 }
 
 .fairy {
-    background: #FFACFF;
+    background: #EB97EB;
 }
 
 .shadow {
     background: #0E2E4C;
+}
+
+.c-loading {
+    width: 100vw;
+    height: 100vh;
+    z-index: $index-top;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $background-secondary;
+    transition: all $transition-slow ease-in-out;
+
+    &.inactive {
+        transform: translateY(-100%);
+    }
+
+    & img {
+        width: 5rem;
+        @include rotating
+    }
 }

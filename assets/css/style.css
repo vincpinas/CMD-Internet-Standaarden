@@ -5,7 +5,7 @@
   display: flex;
   background: #FFFFFF;
   box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.48);
-  z-index: 999;
+  z-index: 200;
   transition: 0.35s;
 }
 .c-nav.inactive {
@@ -133,7 +133,7 @@
 .c-pokedex__cardTypes p {
   padding: 0rem 0.5rem;
   text-shadow: 2px 2px #6d6d6d;
-  color: #eaeaea;
+  color: #fbfbfb;
   border-radius: 0.3rem;
   margin: 0;
   letter-spacing: -0.5px;
@@ -157,6 +157,56 @@
 }
 .c-pokedex__cardName {
   font-weight: 800;
+}
+
+.c-pokemon {
+  display: flex;
+  flex-direction: column;
+}
+.c-pokemon img {
+  image-rendering: pixelated;
+}
+.c-pokemon__details {
+  display: flex;
+}
+.c-pokemon__detailsSprite {
+  padding: 2rem;
+  height: 18rem;
+  width: 18rem;
+  border-radius: 8px;
+  background: #fbfbfb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.c-pokemon__detailsSprite img {
+  height: 12.8571428571rem;
+}
+.c-pokemon__evolutions {
+  width: 100%;
+  margin-top: 4rem;
+}
+.c-pokemon__evolutionsList {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.c-pokemon__evolutionsList li p {
+  text-align: center;
+}
+.c-pokemon__evolutionsStage img {
+  height: 10rem;
+}
+.c-pokemon__evolutionsNext {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.c-pokemon__evolutionsNext img {
+  width: 2rem;
 }
 
 .c-additional {
@@ -204,7 +254,7 @@
   width: 6rem;
   margin: 0;
   border-radius: 0.3rem;
-  color: #eaeaea;
+  color: #fbfbfb;
   text-shadow: 2px 2px #6d6d6d;
   box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.2);
   letter-spacing: -0.5px;
@@ -591,6 +641,33 @@ html label {
 
 .shadow {
   background: #0E2E4C;
+}
+
+.c-loading {
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #FFFFFF;
+  transition: all 0.75s ease-in-out;
+}
+.c-loading.inactive {
+  transform: translateY(-100%);
+}
+.c-loading img {
+  width: 5rem;
+  animation: rotating 2s ease-in-out infinite forwards;
+}
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,8 +1,16 @@
 .c-nav {
-    padding: 2rem;
+    position: fixed;
+    width: 100%;
+    padding: 1.6rem 0rem;
     display: flex;
-    background: var(--background-secondary);
+    background: $background-secondary;
     box-shadow: $box-shadow--primary;
+    z-index: $index-5;
+    transition: $transition-fast;
+
+    &.inactive {
+        transform: translateY(-100%);
+    }
     
     &__pageLink {
         &s {

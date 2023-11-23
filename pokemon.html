@@ -6,11 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokéman - Pokemon</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <script type="module" src="./scripts/pokemon.js" defer></script>
+    <script type="module" src="./scripts/pokemon/pokemon.js" defer></script>
     <script src="./scripts/nav.js" defer></script>
 </head>
 
 <body>
+    <section class="c-loading">
+        <img src="./assets/icons/pokeball.png" alt="loading indicator">
+    </section>
+
     <header class="c-header">
         <nav class="c-nav">
             <ul class="c-nav__pageLinks">
@@ -22,6 +26,17 @@
     </header>
 
     <main class="c-pokemon">
+        <section class="c-pokemon__details">
+            <figure class="c-pokemon__detailsSprite">
+                <img src="" alt="pokemon sprite">
+            </figure>
+        </section>
+
+        <section class="c-pokemon__evolutions">
+            <ul class="c-pokemon__evolutionsList">
+                <li><p>This pokemon has no evolutions</p></li>
+            </ul>
+        </section>
 
     </main>
 </body>

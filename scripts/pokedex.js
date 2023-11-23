@@ -17,7 +17,7 @@ export default class Pokedex {
         })
     }
 
-    fetchPokedexGQL(limit = 151, offset = 0) {
+    async fetchPokedexGQL(limit = 600, offset = 0) {
         const query = `
             query PokedexListQuery {
                     pokemon_v2_pokemon(limit: ${limit}, offset: ${offset}) {
@@ -47,7 +47,7 @@ export default class Pokedex {
         this.pokemon.forEach(pokemon => {
             const card = createEl("li", { class: "c-pokedex__card", id: pokemon.name });
 
-            const a = createEl("a", { class: "", href: `pokemon.html?p=${pokemon.name}` })
+            const a = createEl("a", { class: "", href: `pokemon.html?p=${pokemon.id}` })
             const sprite = createEl("img", { class: "c-pokedex__cardSprite", alt: `${pokemon.name} sprite`, src: this.getSprite(pokemon) });
 
             let number_string = "#" + pokemon.id
@@ -137,8 +137,8 @@ export default class Pokedex {
 
                 this.injectCSS(css);
 
-                const li = createEl("li", { class: "c-pokedex__searchAutocompleteItem", id: `auto_${p.name}` });
-                const a = createEl("a", { href: `pokemon.html?p=${p.name}`, innerHTML: p.name });
+                const li = createEl("li", { class: "c-pokedex__searchAutocompleteItem", id: `auto_${p.id}` });
+                const a = createEl("a", { href: `pokemon.html?p=${p.id}`, innerHTML: p.name });
 
                 li.appendChild(a);
                 autoComplete.appendChild(li);

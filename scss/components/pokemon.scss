@@ -1,3 +1,61 @@
 .c-pokemon {
-    
+    display: flex;
+    flex-direction: column;
+
+    img {
+        image-rendering: pixelated;
+    }
+
+    &__details {
+        display: flex;
+
+        $details_height: 18rem;
+
+        &Sprite {
+            padding: 2rem;
+            height: $details_height;
+            width: $details_height;
+            border-radius: 8px;
+            background: $white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &Sprite img {
+            height: calc($details_height / 1.4);
+        }
+    }
+
+    &__evolutions {
+        width: 100%;
+        margin-top: 4rem;
+
+        &List {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        &List li p {
+            text-align: center;
+        }
+
+        &Stage img {
+            height: 10rem;
+        }
+
+        &Next {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &Next img {
+            width: 2rem;
+        }
+    }
 }
