@@ -36,14 +36,15 @@
             display: table-row-group;
             vertical-align: middle;
         }
-
-        tr, th {
-            @include label;
-        }
-
+        
         tr {
+            @include label;
             display: table-row;
             vertical-align: inherit;
+        }
+
+        th, td {
+            @include font--primary();
         }
 
         th {

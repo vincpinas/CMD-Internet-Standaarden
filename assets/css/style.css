@@ -187,20 +187,23 @@
   display: table-row-group;
   vertical-align: middle;
 }
-.c-pokemon__details tr, .c-pokemon__details th {
+.c-pokemon__details tr {
   font-size: 14px;
   line-height: 20px;
   margin-bottom: 1rem;
+  display: table-row;
+  vertical-align: inherit;
 }
 @media screen and (max-width: 767px) {
-  .c-pokemon__details tr, .c-pokemon__details th {
+  .c-pokemon__details tr {
     font-size: 12px;
     line-height: 16px;
   }
 }
-.c-pokemon__details tr {
-  display: table-row;
-  vertical-align: inherit;
+.c-pokemon__details th, .c-pokemon__details td {
+  font-family: "PKMNRBYGSC";
+  font-weight: 300;
+  font-style: normal;
 }
 .c-pokemon__details th {
   color: #6d6d6d;
