@@ -45,14 +45,15 @@
             display: table-row-group;
             vertical-align: middle;
         }
-        
+
         tr {
             @include label;
             display: table-row;
             vertical-align: inherit;
         }
 
-        th, td {
+        th,
+        td {
             @include font--primary();
         }
 
@@ -78,7 +79,6 @@
             display: flex;
             justify-content: center;
             gap: 0.5rem;
-            overflow-x: scroll;
 
             @media #{$tablet-down} {
                 justify-content: unset;

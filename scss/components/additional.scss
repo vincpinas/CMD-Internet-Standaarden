@@ -29,7 +29,6 @@
     &__typeChartList {
         display: flex;
         flex-direction: column;
-        overflow-x: scroll;
 
         & > li:not(:last-of-type) {
             margin-bottom: 0.4rem;

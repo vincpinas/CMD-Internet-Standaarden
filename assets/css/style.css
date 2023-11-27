@@ -1,7 +1,7 @@
 .c-nav {
   position: fixed;
   width: 100vw;
-  padding: 1.6rem 0rem;
+  padding: 1.6rem 2rem;
   display: flex;
   background: #FFFFFF;
   box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.48);
@@ -211,7 +211,8 @@
     line-height: 16px;
   }
 }
-.c-pokemon__details th, .c-pokemon__details td {
+.c-pokemon__details th,
+.c-pokemon__details td {
   font-family: "PKMNRBYGSC";
   font-weight: 300;
   font-style: normal;
@@ -235,7 +236,6 @@
   display: flex;
   justify-content: center;
   gap: 0.5rem;
-  overflow-x: scroll;
 }
 @media screen and (max-width: 991px) {
   .c-pokemon__evolutionsList {
@@ -312,7 +312,6 @@
 .c-additional__typeChartList {
   display: flex;
   flex-direction: column;
-  overflow-x: scroll;
 }
 .c-additional__typeChartList > li:not(:last-of-type) {
   margin-bottom: 0.4rem;
@@ -752,6 +751,15 @@ html label {
   to {
     transform: rotate(360deg);
   }
+}
+
+.-scrollx {
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.-scrollx::-webkit-scrollbar {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */
