@@ -1,7 +1,7 @@
 import { grab, fetchGraphQL } from "../helpers.js";
 import { formatEvolutionChain } from "./helpers.js";
 
-export async function fetchPokemonData(id, classRef) {
+export async function fetchPokemonData(id, class_ref) {
   const query = `
     query pokemon_details($name: String) {
       species: pokemon_v2_pokemonspecies(where: {id: {_eq: ${id}}}) {
@@ -60,16 +60,16 @@ export async function fetchPokemonData(id, classRef) {
   ).then(response => {
     let species = response.data.species[0];
 
-    classRef.pokemon = species.pokemon.nodes[0];
-    classRef.sprites = JSON.parse(species.pokemon.nodes[0].pokemon_v2_pokemonsprites[0].sprites)
+    class_ref.pokemon = species.pokemon.nodes[0];
+    class_ref.sprites = JSON.parse(species.pokemon.nodes[0].pokemon_v2_pokemonsprites[0].sprites)
     delete species.pokemon;
-    classRef.species = species;
+    class_ref.species = species;
 
     return response.data.species[0];
   })
 }
 
-export async function fetchEvolutionChain(id, classRef) {
+export async function fetchEvolutionChain(id, class_ref) {
   let data;
 
   await grab(`https://pokeapi.co/api/v2/evolution-chain/${id}/`).then(response => {
@@ -77,9 +77,9 @@ export async function fetchEvolutionChain(id, classRef) {
   })
 
   return new Promise((resolve, reject) => {
-    formatEvolutionChain(data.chain, classRef)
+    formatEvolutionChain(data.chain)
       .then(result => {
-        classRef.evolution_chain = result;
+        class_ref.evolution_chain = result;
         resolve(result)
       });
   });

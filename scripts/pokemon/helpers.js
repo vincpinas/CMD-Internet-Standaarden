@@ -9,13 +9,11 @@ export function findNextEvolution(current_evolution) {
     return null;
 }
 
-export async function formatEvolutionChain(chain, class_ref) {
+export async function formatEvolutionChain(chain) {
     let baby = chain;
     let teen = findNextEvolution(chain);
     let adult = findNextEvolution(teen);
     let formatted_chain = [];
-
-    console.log(chain)
 
     let fetched_sprites = [];
     let evolution_chain_length = 0;
@@ -43,8 +41,6 @@ export async function formatEvolutionChain(chain, class_ref) {
     return new Promise((resolve, reject) => {
         const interval = setInterval(() => {
             if (fetched_sprites.length === evolution_chain_length) {
-                class_ref.evolution_chain_length = evolution_chain_length;
-                class_ref.evolution_chain_sprites = fetched_sprites;
                 clearInterval(interval);
                 resolve(formatted_chain);
             }

@@ -6,6 +6,7 @@
         width: 100%;
         display: flex;
         flex-direction: column;
+        overflow: hidden;
 
 
         & article {
@@ -28,6 +29,7 @@
     &__typeChartList {
         display: flex;
         flex-direction: column;
+        overflow-x: scroll;
 
         & > li:not(:last-of-type) {
             margin-bottom: 0.4rem;

@@ -4,7 +4,7 @@ import { fetchEvolutionChain, fetchPokemonData } from "./queries.js"
 
 export default class Pokemon {
   constructor() {
-    this.params = new URLSearchParams(window.location.search);
+    this.id = new URLSearchParams(window.location.search).get("p");
     this.pokemon = {};
     this.species = {};
     this.evolution_chain = [];
@@ -13,7 +13,7 @@ export default class Pokemon {
   }
 
   init() {
-    let pokemon_name = this.params.get("p");
+    let pokemon_name = this.id;
 
     getElements(this);
 
@@ -21,6 +21,7 @@ export default class Pokemon {
       .then(() => fetchEvolutionChain(this.species.evolution_chain_id, this))
       .then(() => this.insertPokemon())
       .then(() => this.removeLoadingScreen())
+      .then(() => this.addToLastViewed())
   }
 
   async insertPokemon() {
@@ -31,7 +32,6 @@ export default class Pokemon {
     this.elements.sprite.alt = "pokemon sprite";
 
     // Insert details info
-    console.log(this)
     this.elements.details.name.td.innerHTML = this.pokemon.name;
     this.elements.details.id.td.innerHTML = `#${this.pokemon.id}`;
     this.elements.details.height.td.innerHTML = this.getHeight();
@@ -102,6 +102,30 @@ export default class Pokemon {
     if (!this.elements.loading) return;
 
     this.elements.loading.classList.add("inactive");
+  }
+
+  addToLastViewed() {
+    if(!localStorage.getItem("lastViewed")) {
+      localStorage.setItem("lastViewed", "[]");
+    }
+
+    let storage = [...JSON.parse(localStorage.getItem("lastViewed"))];
+    
+    let pokemon_obj_clone = Object.assign({}, this)
+    
+    for (let i = 0; i < storage.length; i++) {
+      const stored = storage[i];
+      if(this.id === stored.id) storage.splice(storage[i], 1);
+    }
+
+    if(storage.length >= 6) {
+      storage.splice(5, storage.length-1);
+      storage.push(pokemon_obj_clone);
+    } else {
+      storage.push(pokemon_obj_clone);
+    }
+    
+    localStorage.setItem("lastViewed", JSON.stringify(storage));
   }
 }
 

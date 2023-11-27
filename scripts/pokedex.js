@@ -15,6 +15,8 @@ export default class Pokedex {
         this.fetchPokedexGQL().then(() => {
             this.insertPokemon();
         })
+
+        console.log(JSON.parse(localStorage.getItem("lastViewed")))
     }
 
     async fetchPokedexGQL(limit = 649, offset = 0) {
