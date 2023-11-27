@@ -20,9 +20,6 @@
 }
 .c-nav__pageLink a {
   font-size: 26px;
-  font-family: "PKMNRBYGSC";
-  font-weight: 700;
-  font-style: normal;
   line-height: 28px;
   margin-bottom: 1.5rem;
   font-family: "Pokemon Hollow";
@@ -73,7 +70,6 @@
 .c-pokedex__searchAutocompleteItem {
   padding: 0 1.5rem;
   height: 2rem;
-  display: flex;
   align-items: center;
   display: flex;
   width: 100%;
@@ -146,9 +142,6 @@
 .c-pokedex__cardNumber {
   color: #a1bde3;
   font-size: 14px;
-  font-family: "PKMNRBYGSC";
-  font-weight: 300;
-  font-style: normal;
   line-height: 20px;
   margin-bottom: 1rem;
 }
@@ -196,9 +189,6 @@
 }
 .c-pokemon__details tr, .c-pokemon__details th {
   font-size: 14px;
-  font-family: "PKMNRBYGSC";
-  font-weight: 300;
-  font-style: normal;
   line-height: 20px;
   margin-bottom: 1rem;
 }
@@ -256,9 +246,6 @@
 .c-pokemon__evolutionsNext p {
   max-width: 8rem;
   font-size: 14px;
-  font-family: "PKMNRBYGSC";
-  font-weight: 300;
-  font-style: normal;
   line-height: 20px;
   margin-bottom: 1rem;
 }
@@ -362,9 +349,6 @@
 }
 .c-sources__list li p {
   font-size: 14px;
-  font-family: "PKMNRBYGSC";
-  font-weight: 300;
-  font-style: normal;
   line-height: 20px;
   margin-bottom: 1rem;
 }
@@ -432,7 +416,6 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: "";
   content: none;
 }
 
@@ -494,6 +477,9 @@ html button,
 html a,
 html input,
 html select {
+  font-family: "PKMNRBYGSC";
+  font-weight: 300;
+  font-style: normal;
   font-size: 14px;
   line-height: 20px;
   margin-bottom: 1rem;
@@ -513,10 +499,10 @@ html select {
 }
 body h1,
 html h1 {
-  font-size: 42px;
   font-family: "PKMNRBYGSC";
   font-weight: 800;
   font-style: normal;
+  font-size: 42px;
   line-height: 48px;
   margin-bottom: 1.5rem;
 }
@@ -529,10 +515,10 @@ html h1 {
 }
 body h2,
 html h2 {
-  font-size: 40px;
   font-family: "PKMNRBYGSC";
   font-weight: 800;
   font-style: normal;
+  font-size: 40px;
   line-height: 44px;
   margin-bottom: 1.5rem;
 }
@@ -545,10 +531,10 @@ html h2 {
 }
 body h3,
 html h3 {
-  font-size: 26px;
   font-family: "PKMNRBYGSC";
-  font-weight: 700;
+  font-weight: 300;
   font-style: normal;
+  font-size: 26px;
   line-height: 28px;
   margin-bottom: 1.5rem;
 }
@@ -561,10 +547,10 @@ html h3 {
 }
 body h4,
 html h4 {
-  font-size: 22px;
   font-family: "PKMNRBYGSC";
   font-weight: 300;
   font-style: normal;
+  font-size: 22px;
   line-height: 28px;
   margin-bottom: 0.15rem;
 }
@@ -577,10 +563,10 @@ html h4 {
 }
 body h5,
 html h5 {
-  font-size: 18px;
   font-family: "PKMNRBYGSC";
   font-weight: 300;
   font-style: normal;
+  font-size: 18px;
   line-height: 20px;
   margin-bottom: 2.5rem;
 }
@@ -593,10 +579,10 @@ html h5 {
 }
 body h6,
 html h6 {
-  font-size: 16px;
   font-family: "PKMNRBYGSC";
   font-weight: 300;
   font-style: normal;
+  font-size: 16px;
   line-height: 18px;
   margin-bottom: 2.5rem;
 }
@@ -609,10 +595,10 @@ html h6 {
 }
 body p,
 html p {
-  font-size: 16px;
   font-family: "PKMNRBYGSC";
   font-weight: 300;
   font-style: normal;
+  font-size: 16px;
   line-height: 28px;
   margin-bottom: 1rem;
 }
@@ -625,10 +611,10 @@ html p {
 }
 body label,
 html label {
-  font-size: 14px;
   font-family: "PKMNRBYGSC";
   font-weight: 300;
   font-style: normal;
+  font-size: 14px;
   line-height: 20px;
   margin-bottom: 1rem;
 }

@@ -24,7 +24,6 @@
 
 @mixin h1 {
     @include font-size($font-size--h1);
-    @include font--primary(800);
     line-height: #{$line-height--h1}px;
     margin-bottom: 1.5rem;
 
@@ -36,7 +35,6 @@
 
 @mixin h2 {
     @include font-size($font-size--h2);
-    @include font--primary(800);
     line-height: #{$line-height--h2}px;
     margin-bottom: 1.5rem;
 
@@ -48,7 +46,6 @@
 
 @mixin h3 {
     @include font-size($font-size--h3);
-    @include font--primary(700);
     line-height: #{$line-height--h3}px;
     margin-bottom: 1.5rem;
 
@@ -60,7 +57,6 @@
 
 @mixin h4 {
     @include font-size($font-size--h4);
-    @include font--primary();
     line-height: #{$line-height--h4}px;
     margin-bottom: 0.15rem;
 
@@ -72,7 +68,6 @@
 
 @mixin h5 {
     @include font-size($font-size--h5);
-    @include font--primary();
     line-height: #{$line-height--h5}px;
     margin-bottom: 2.5rem;
 
@@ -84,7 +79,6 @@
 
 @mixin h6 {
     @include font-size($font-size--h6);
-    @include font--primary();
     line-height: #{$line-height--h6}px;
     margin-bottom: 2.5rem;
 
@@ -96,7 +90,6 @@
 
 @mixin paragraph {
     @include font-size($font-size--paragraph);
-    @include font--primary();
     line-height: #{$line-height--paragraph}px;
     margin-bottom: 1rem;
 
@@ -108,7 +101,6 @@
 
 @mixin button {
     @include font-size($font-size--button);
-    @include font--primary(400);
     line-height: #{$line-height--button}px;
     margin-bottom: 1.5rem;
 
@@ -131,7 +123,6 @@
 
 @mixin label {
     @include font-size($font-size--label);
-    @include font--primary();
     line-height: #{$line-height--label}px;
     margin-bottom: 1rem;
 

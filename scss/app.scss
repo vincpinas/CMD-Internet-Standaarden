@@ -73,7 +73,6 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-    content: "";
     content: none;
 }
 
@@ -127,38 +126,47 @@ html {
     a,
     input,
     select {
+        @include font--primary();
         @include input;
     }
-
+    
     h1 {
+        @include font--primary(800);
         @include h1;
     }
-
+    
     h2 {
+        @include font--primary(800);
         @include h2;
     }
-
+    
     h3 {
+        @include font--primary();
         @include h3;
     }
-
+    
     h4 {
+        @include font--primary();
         @include h4;
     }
-
+    
     h5 {
+        @include font--primary();
         @include h5;
     }
-
+    
     h6 {
+        @include font--primary();
         @include h6;
     }
-
+    
     p {
+        @include font--primary();
         @include paragraph;
     }
-
+    
     label {
+        @include font--primary();
         @include label;
     }
 

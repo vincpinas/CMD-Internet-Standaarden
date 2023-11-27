@@ -53,13 +53,15 @@ export default class Pokedex {
             let number_string = "#" + pokemon.id
             const number = createEl("p", { class: "c-pokedex__cardNumber", innerHTML: number_string })
             const name = createEl("p", { class: "c-pokedex__cardName", innerHTML: pokemon.name })
-            const typeRow = createEl("span", { class: "c-pokedex__cardTypes" })
+            const typeRow = createEl("ul", { class: "c-pokedex__cardTypes" })
 
             this.getTypes(pokemon).forEach(type => {
+                let li = createEl("li")
                 let typeSlot = createEl("p", { innerHTML: type })
                 typeSlot.style.background = typeColors[type]
 
-                typeRow.appendChild(typeSlot)
+                li.appendChild(typeSlot)
+                typeRow.appendChild(li)
             })
 
             let max_inset = 6;

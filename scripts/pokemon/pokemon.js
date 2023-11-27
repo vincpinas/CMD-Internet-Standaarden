@@ -27,7 +27,8 @@ export default class Pokemon {
     if (!this.elements.sprite) return;
 
     // Insert details sprite
-    this.elements.sprite.src = this.sprites.versions["generation-v"]["black-white"].animated.front_default||this.sprites.versions["generation-v"]["black-white"].front_default
+    this.elements.sprite.src = this.sprites.versions["generation-v"]["black-white"].animated.front_default||this.sprites.versions["generation-v"]["black-white"].front_default;
+    this.elements.sprite.alt = "pokemon sprite";
 
     // Insert details info
     console.log(this)
