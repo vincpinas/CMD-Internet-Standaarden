@@ -1,5 +1,5 @@
 .c-pokedex {
-    &__search {
+    &__search div {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -76,7 +76,7 @@
         }
 
         &:hover {
-            background: darkem($background-secondary, 5%);
+            background: darken($background-secondary, 1%);
             transform: translateX(2px) translateY(2px);
         }
 

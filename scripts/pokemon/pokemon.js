@@ -42,11 +42,13 @@ export default class Pokemon {
     if (this.elements.evolutions_placeholder) this.elements.evolutions_placeholder.remove();
     this.evolution_chain.forEach((evolution, index) => {
       const evo = createEl("li", { class: "c-pokemon__evolutionsStage" })
-      evo.appendChild(createEl("img", { src: evolution.sprites.front_default }))
-      evo.appendChild(createEl("p", { innerHTML: evolution.name }))
+      evo.appendChild(createEl("img", { src: evolution.sprites.front_default, alt: `${evolution.name} evolution stage` }))
+      const name = createEl("p")
+      name.appendChild(createEl("a", { innerHTML: evolution.name, href: `/pokemon.html?p=${evolution.id}` }))
+      evo.appendChild(name)
 
       const next = createEl("li", { class: "c-pokemon__evolutionsNext" })
-      next.appendChild(createEl("img", { src: "./assets/icons/arrow.webp" }))
+      next.appendChild(createEl("img", { src: "./assets/icons/arrow.webp", alt: "Next arrow" }))
 
 
       if (this.evolution_chain[index + 1] && this.evolution_chain[index + 1].details) {

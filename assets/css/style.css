@@ -40,7 +40,7 @@
   color: #F50022;
 }
 
-.c-pokedex__search {
+.c-pokedex__search div {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -112,7 +112,7 @@
   flex-direction: column;
 }
 .c-pokedex__card:hover {
-  background: darkem(#FFFFFF, 5%);
+  background: #fcfcfc;
   transform: translateX(2px) translateY(2px);
 }
 .c-pokedex__card:hover .c-pokedex__cardSprite {
@@ -162,12 +162,12 @@
 .c-pokemon img {
   image-rendering: pixelated;
 }
-.c-pokemon__details {
+.c-pokemon__details div {
   display: flex;
   gap: 1rem;
 }
 @media screen and (max-width: 991px) {
-  .c-pokemon__details {
+  .c-pokemon__details div {
     flex-direction: column;
   }
 }
@@ -274,11 +274,11 @@
     line-height: 16px;
   }
 }
-.c-pokemon__evolutionsNext a {
+.c-pokemon__evolutions a {
   color: #F50022;
   transition: 0.35s;
 }
-.c-pokemon__evolutionsNext a:hover {
+.c-pokemon__evolutions a:hover {
   color: #ff7653;
   text-shadow: 2px 2px rgba(236, 48, 0, 0.2);
 }
@@ -354,9 +354,6 @@
   max-width: 40rem;
 }
 .c-sources__list li a {
-  font-family: "PKMNRBYGSC";
-  font-weight: 400;
-  font-style: normal;
   color: #F50022;
   transition: 0.35s;
 }
@@ -497,9 +494,6 @@ html button,
 html a,
 html input,
 html select {
-  font-family: "PKMNRBYGSC";
-  font-weight: 300;
-  font-style: normal;
   font-size: 14px;
   line-height: 20px;
   margin-bottom: 1rem;
@@ -552,7 +546,7 @@ html h2 {
 body h3,
 html h3 {
   font-family: "PKMNRBYGSC";
-  font-weight: 300;
+  font-weight: 800;
   font-style: normal;
   font-size: 26px;
   line-height: 28px;
@@ -568,7 +562,7 @@ html h3 {
 body h4,
 html h4 {
   font-family: "PKMNRBYGSC";
-  font-weight: 300;
+  font-weight: 800;
   font-style: normal;
   font-size: 22px;
   line-height: 28px;
@@ -730,12 +724,15 @@ html label {
   width: 100vw;
   height: 100vh;
   z-index: 999;
-  position: absolute;
+  position: fixed;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background: #FFFFFF;
   transition: all 0.75s ease-in-out;
+  gap: 1rem;
+  color: #6d6d6d;
 }
 .c-loading.inactive {
   transform: translateY(-100%);

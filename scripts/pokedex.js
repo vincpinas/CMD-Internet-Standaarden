@@ -68,10 +68,7 @@ export default class Pokedex {
 
             let max_inset = 6;
             let types = this.getTypes(pokemon);
-            const css = `#${pokemon.name}:hover { 
-                box-shadow: -${max_inset / 2}px -${max_inset / 2}px inset ${typeColors[types[0]]},
-                            -${max_inset}px -${max_inset}px inset ${types[1] ? typeColors[types[1]] : typeColors[types[0]]};
-            }`
+            const css = `#${pokemon.name}:hover{box-shadow: -${max_inset / 2}px -${max_inset / 2}px inset ${typeColors[types[0]]},-${max_inset}px -${max_inset}px inset ${types[1] ? typeColors[types[1]] : typeColors[types[0]]};}`
 
             injectCSS(css)
 
@@ -92,7 +89,7 @@ export default class Pokedex {
             types.push(type.pokemon_v2_type.name)
         })
 
-        return types
+        return types;
     }
 
     getSprite(pokemon) {
@@ -116,22 +113,6 @@ export default class Pokedex {
             if (e.target.value.length < 1) return;
 
             filter.forEach(p => {
-                let types = this.getTypes(p)
-
-                const css = `
-                    #auto_${p.name}:hover a {
-                        // color: ${typeColors[types[0]]};
-                        // background-image: linear-gradient(45deg, ${typeColors[types[0]]}, ${types[1] ? typeColors[types[1]] : typeColors[types[0]]});
-                        // -webkit-background-clip: text;
-                        // -moz-background-clip: text;
-                        // -webkit-text-fill-color: transparent; 
-                        // -moz-text-fill-color: transparent;
-                        // width: fit-content;
-                    }
-                `
-
-                injectCSS(css);
-
                 const li = createEl("li", { class: "c-pokedex__searchAutocompleteItem", id: `auto_${p.id}` });
                 const a = createEl("a", { href: `pokemon.html?p=${p.id}`, innerHTML: p.name });
 

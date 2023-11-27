@@ -9,7 +9,6 @@
         max-width: 40rem;
 
         li a {
-            @include font--primary(400);
             color: $special-primary;
             transition: $transition-fast;
         }

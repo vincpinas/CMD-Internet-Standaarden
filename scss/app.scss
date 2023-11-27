@@ -126,7 +126,6 @@ html {
     a,
     input,
     select {
-        @include font--primary();
         @include input;
     }
     
@@ -141,12 +140,12 @@ html {
     }
     
     h3 {
-        @include font--primary();
+        @include font--primary(800);
         @include h3;
     }
     
     h4 {
-        @include font--primary();
+        @include font--primary(800);
         @include h4;
     }
     
@@ -256,12 +255,15 @@ html {
     width: 100vw;
     height: 100vh;
     z-index: $index-top;
-    position: absolute;
+    position: fixed;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background: $background-secondary;
     transition: all $transition-slow ease-in-out;
+    gap: 1rem;
+    color: $text-secondary;
 
     &.inactive {
         transform: translateY(-100%);

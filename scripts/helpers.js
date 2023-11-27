@@ -69,8 +69,12 @@ export const typeColors = {
 };
 
 export const injectCSS = (css) => {
-  let el = createEl("style", { type: "text/css" });
-  el.innerText = css;
+  let el;
+
+  if(document.querySelector("head style")) el = document.querySelector("head style");
+  else el = createEl("style");
+  
+  el.innerText += css;
   document.head.appendChild(el);
   return el;
 };

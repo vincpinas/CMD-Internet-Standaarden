@@ -27,12 +27,13 @@ export async function formatEvolutionChain(chain) {
         let id = evolution.species.url.replace("https://pokeapi.co/api/v2/pokemon-species/", "").replace("/", "")
 
         fetchSprites(id)
-            .then(r => {
-                formatted_chain[index] = {};
-                formatted_chain[index].name = evolution.species.name
-                formatted_chain[index].sprites = r
+        .then(r => {
                 if (typeof details === "undefined") return;
-                formatted_chain[index].details = details
+                formatted_chain[index] = {};
+                formatted_chain[index].id = Number(id);
+                formatted_chain[index].name = evolution.species.name;
+                formatted_chain[index].sprites = r;
+                formatted_chain[index].details = details;
 
                 fetched_sprites.push(r);
             })
