@@ -44,7 +44,7 @@ export default class Pokemon {
       const evo = createEl("li", { class: "c-pokemon__evolutionsStage" })
       evo.appendChild(createEl("img", { src: evolution.sprites.front_default, alt: `${evolution.name} evolution stage` }))
       const name = createEl("p")
-      name.appendChild(createEl("a", { innerHTML: evolution.name, href: `/pokemon.html?p=${evolution.id}` }))
+      name.appendChild(createEl("a", { innerHTML: evolution.name, href: `pokemon.html?p=${evolution.id}` }))
       evo.appendChild(name)
 
       const next = createEl("li", { class: "c-pokemon__evolutionsNext" })
