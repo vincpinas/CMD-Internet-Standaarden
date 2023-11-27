@@ -8,6 +8,7 @@
 
     &__details {
         display: flex;
+        gap: 1rem;
 
         $details_height: 18rem;
 
@@ -25,6 +26,35 @@
         &Sprite img {
             height: calc($details_height / 1.4);
         }
+
+        table {
+            width: 100%;
+            background: $white;
+        }
+
+        tbody {
+            display: table-row-group;
+            vertical-align: middle;
+        }
+
+        tr, th {
+            @include label;
+        }
+
+        tr {
+            display: table-row;
+            vertical-align: inherit;
+        }
+
+        th {
+            color: $text-secondary;
+            padding: 0.2rem 2rem;
+            width: 2rem;
+        }
+
+        td {
+            text-transform: capitalize;
+        }
     }
 
     &__evolutions {
@@ -35,12 +65,25 @@
             width: 100%;
             display: flex;
             justify-content: center;
-            align-items: center;
+            // align-items: center;
             gap: 0.5rem;
         }
 
         &List li p {
             text-align: center;
+        }
+
+        &Stage {
+            position: relative;
+        }
+
+        &Stage p {
+            position: absolute;
+            left: -1rem;
+            top: -0.5rem;
+            text-transform: capitalize;
+            font-weight: bold;
+            color: $text-secondary;
         }
 
         &Stage img {
@@ -52,6 +95,21 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+        }
+
+        &Next p {
+            max-width: 8rem;
+            @include label;
+        }
+
+        &Next a {
+            color: $special-primary;
+            transition: $transition-fast;
+        }
+
+        &Next a:hover {
+            color: $special-secondary;
+            text-shadow: 2px 2px darken(rgba($special-secondary, $alpha: .2), 20%);
         }
 
         &Next img {

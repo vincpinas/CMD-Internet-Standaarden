@@ -1,4 +1,4 @@
-import { createEl, fetchGraphQL, typeColors } from "../scripts/helpers.js"
+import { createEl, fetchGraphQL, typeColors, injectCSS } from "../scripts/helpers.js"
 
 
 export default class Pokedex {
@@ -17,7 +17,7 @@ export default class Pokedex {
         })
     }
 
-    async fetchPokedexGQL(limit = 600, offset = 0) {
+    async fetchPokedexGQL(limit = 649, offset = 0) {
         const query = `
             query PokedexListQuery {
                     pokemon_v2_pokemon(limit: ${limit}, offset: ${offset}) {
@@ -60,8 +60,6 @@ export default class Pokedex {
                 typeSlot.style.background = typeColors[type]
 
                 typeRow.appendChild(typeSlot)
-
-
             })
 
             let max_inset = 6;
@@ -71,7 +69,7 @@ export default class Pokedex {
                             -${max_inset}px -${max_inset}px inset ${types[1] ? typeColors[types[1]] : typeColors[types[0]]};
             }`
 
-            this.injectCSS(css)
+            injectCSS(css)
 
             a.appendChild(sprite)
             a.appendChild(number)
@@ -96,13 +94,6 @@ export default class Pokedex {
     getSprite(pokemon) {
         return JSON.parse(pokemon.pokemon_v2_pokemonsprites[0].sprites).front_default
     }
-
-    injectCSS = (css) => {
-        let el = createEl("style", { type: "text/css" });
-        el.innerText = css;
-        document.head.appendChild(el);
-        return el;
-    };
 
     _registerSearchHandler() {
         const search = document.querySelector("#search");
@@ -135,7 +126,7 @@ export default class Pokedex {
                     }
                 `
 
-                this.injectCSS(css);
+                injectCSS(css);
 
                 const li = createEl("li", { class: "c-pokedex__searchAutocompleteItem", id: `auto_${p.id}` });
                 const a = createEl("a", { href: `pokemon.html?p=${p.id}`, innerHTML: p.name });

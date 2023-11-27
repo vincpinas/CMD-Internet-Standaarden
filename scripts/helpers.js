@@ -8,6 +8,7 @@ export const createEl = (type, options = {}) => {
   options.src ? element.setAttribute("src", options.src) : null;
   options.href ? element.setAttribute("href", options.href) : null;
   options.type ? element.setAttribute("type", options.type) : null;
+  options.blankTarget ? element.setAttribute("target", "_blank") : null;
 
   return element;
 }
@@ -65,4 +66,11 @@ export const typeColors = {
   'dark': '#785442',
   'fairy': '#EB97EB',
   'shadow': '#0E2E4C'
+};
+
+export const injectCSS = (css) => {
+  let el = createEl("style", { type: "text/css" });
+  el.innerText = css;
+  document.head.appendChild(el);
+  return el;
 };

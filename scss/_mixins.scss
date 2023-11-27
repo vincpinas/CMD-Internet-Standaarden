@@ -131,6 +131,7 @@
 
 @mixin label {
     @include font-size($font-size--label);
+    @include font--primary();
     line-height: #{$line-height--label}px;
     margin-bottom: 1rem;
 

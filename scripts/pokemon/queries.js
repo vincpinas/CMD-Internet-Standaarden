@@ -70,9 +70,20 @@ export async function fetchPokemonData(id, classRef) {
 }
 
 export async function fetchEvolutionChain(id, classRef) {
-  return grab(`https://pokeapi.co/api/v2/evolution-chain/${id}/`).then(response => {
-    classRef.evolution_chain = formatEvolutionChain(response.chain);
+  let data;
+
+  await grab(`https://pokeapi.co/api/v2/evolution-chain/${id}/`).then(response => {
+    data = response;
   })
+
+  return new Promise((resolve, reject) => {
+    formatEvolutionChain(data.chain, classRef)
+      .then(result => {
+        classRef.evolution_chain = result;
+        resolve(result)
+      });
+  });
+
 }
 
 export async function fetchSprites(id) {

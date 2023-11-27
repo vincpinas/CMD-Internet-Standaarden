@@ -144,8 +144,11 @@
   image-rendering: pixelated;
 }
 .c-pokedex__cardNumber {
-  color: #a7c1e4;
+  color: #a1bde3;
   font-size: 14px;
+  font-family: "PKMNRBYGSC";
+  font-weight: 300;
+  font-style: normal;
   line-height: 20px;
   margin-bottom: 1rem;
 }
@@ -168,6 +171,7 @@
 }
 .c-pokemon__details {
   display: flex;
+  gap: 1rem;
 }
 .c-pokemon__detailsSprite {
   padding: 2rem;
@@ -182,6 +186,40 @@
 .c-pokemon__detailsSprite img {
   height: 12.8571428571rem;
 }
+.c-pokemon__details table {
+  width: 100%;
+  background: #fbfbfb;
+}
+.c-pokemon__details tbody {
+  display: table-row-group;
+  vertical-align: middle;
+}
+.c-pokemon__details tr, .c-pokemon__details th {
+  font-size: 14px;
+  font-family: "PKMNRBYGSC";
+  font-weight: 300;
+  font-style: normal;
+  line-height: 20px;
+  margin-bottom: 1rem;
+}
+@media screen and (max-width: 767px) {
+  .c-pokemon__details tr, .c-pokemon__details th {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+.c-pokemon__details tr {
+  display: table-row;
+  vertical-align: inherit;
+}
+.c-pokemon__details th {
+  color: #6d6d6d;
+  padding: 0.2rem 2rem;
+  width: 2rem;
+}
+.c-pokemon__details td {
+  text-transform: capitalize;
+}
 .c-pokemon__evolutions {
   width: 100%;
   margin-top: 4rem;
@@ -190,11 +228,21 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
   gap: 0.5rem;
 }
 .c-pokemon__evolutionsList li p {
   text-align: center;
+}
+.c-pokemon__evolutionsStage {
+  position: relative;
+}
+.c-pokemon__evolutionsStage p {
+  position: absolute;
+  left: -1rem;
+  top: -0.5rem;
+  text-transform: capitalize;
+  font-weight: bold;
+  color: #6d6d6d;
 }
 .c-pokemon__evolutionsStage img {
   height: 10rem;
@@ -204,6 +252,29 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.c-pokemon__evolutionsNext p {
+  max-width: 8rem;
+  font-size: 14px;
+  font-family: "PKMNRBYGSC";
+  font-weight: 300;
+  font-style: normal;
+  line-height: 20px;
+  margin-bottom: 1rem;
+}
+@media screen and (max-width: 767px) {
+  .c-pokemon__evolutionsNext p {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+.c-pokemon__evolutionsNext a {
+  color: #F50022;
+  transition: 0.35s;
+}
+.c-pokemon__evolutionsNext a:hover {
+  color: #ff7653;
+  text-shadow: 2px 2px rgba(236, 48, 0, 0.2);
 }
 .c-pokemon__evolutionsNext img {
   width: 2rem;
@@ -291,6 +362,9 @@
 }
 .c-sources__list li p {
   font-size: 14px;
+  font-family: "PKMNRBYGSC";
+  font-weight: 300;
+  font-style: normal;
   line-height: 20px;
   margin-bottom: 1rem;
 }
@@ -380,7 +454,7 @@ table {
 
 body,
 html {
-  background: #F5F8FC;
+  background: hsl(214, 54%, 96%);
   color: #000;
   position: relative;
   display: flex;
@@ -552,6 +626,9 @@ html p {
 body label,
 html label {
   font-size: 14px;
+  font-family: "PKMNRBYGSC";
+  font-weight: 300;
+  font-style: normal;
   line-height: 20px;
   margin-bottom: 1rem;
 }
@@ -567,79 +644,79 @@ html label {
   font-weight: 800;
 }
 
-.normal {
+.-normal {
   background: #BCBCAC;
 }
 
-.fight {
+.-fight {
   background: #BC5442;
 }
 
-.flying {
+.-flying {
   background: #669AFF;
 }
 
-.poison {
+.-poison {
   background: #AB549A;
 }
 
-.ground {
+.-ground {
   background: #DEBC54;
 }
 
-.rock {
+.-rock {
   background: #BCAC66;
 }
 
-.bug {
+.-bug {
   background: #ABBC1C;
 }
 
-.ghost {
+.-ghost {
   background: #6666BC;
 }
 
-.steel {
+.-steel {
   background: #ABACBC;
 }
 
-.fire {
+.-fire {
   background: #FF421C;
 }
 
-.water {
+.-water {
   background: #2F9AFF;
 }
 
-.grass {
+.-grass {
   background: #78CD54;
 }
 
-.electric {
+.-electric {
   background: #FFCD30;
 }
 
-.psychic {
+.-psychic {
   background: #FF549A;
 }
 
-.ice {
+.-ice {
   background: #78DEFF;
 }
 
-.dragon {
+.-dragon {
   background: #7866EF;
 }
 
-.dark {
+.-dark {
   background: #785442;
 }
 
-.fairy {
+.-fairy {
   background: #EB97EB;
 }
 
-.shadow {
+.-shadow {
   background: #0E2E4C;
 }
 
