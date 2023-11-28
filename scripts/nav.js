@@ -13,11 +13,6 @@ class Nav {
         if (!this.navLinks) return;
 
         this.navLinks.forEach(link => {
-            // if(this.window_href.includes("pokemon.html") && link.innerHTML.toLowerCase() === "pokédex") {
-            //     link.style.fontFamily = "Pokemon Solid"
-            //     link.style.color = "#F50022"
-            // }
-
             if (!this.window_href.includes(link.href.toLowerCase())) return;
             link.style.fontFamily = "Pokemon Solid"
             link.style.color = "#F50022"

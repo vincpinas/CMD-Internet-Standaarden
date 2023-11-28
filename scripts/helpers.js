@@ -4,6 +4,7 @@ export const createEl = (type, options = {}) => {
   options.class ? element.className = options.class : null;
   options.id ? element.id = options.id : null;
   options.innerHTML ? element.innerHTML = options.innerHTML : null;
+  options.innerText ? element.innerText = options.innerText : null;
   options.alt ? element.setAttribute("alt", options.alt) : null;
   options.src ? element.setAttribute("src", options.src) : null;
   options.href ? element.setAttribute("href", options.href) : null;
@@ -69,12 +70,8 @@ export const typeColors = {
 };
 
 export const injectCSS = (css) => {
-  let el;
+  const el = createEl("style", { innerText: css })
 
-  if(document.querySelector("head style")) el = document.querySelector("head style");
-  else el = createEl("style");
-  
-  el.innerText += css;
   document.head.appendChild(el);
   return el;
 };
