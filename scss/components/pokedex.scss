@@ -9,7 +9,6 @@
         border-radius: 0.4rem;
         padding: 0.3rem;
         padding-left: 0;
-        margin-bottom: 5rem;
     }
 
     &__searchInput {
@@ -44,6 +43,22 @@
             @include font--primary(500);
             margin: 0;
             width: 100%;
+        }
+    }
+
+    &__recent {
+        overflow-x: hidden;
+        padding-bottom: 1rem;
+    }
+
+    &__recentList {
+        display: grid;
+        grid-row: 10rem;
+        column-gap: 2rem;
+        padding-right: 0.1rem;
+
+        & > li {
+            padding-top: 2rem;
         }
     }
 

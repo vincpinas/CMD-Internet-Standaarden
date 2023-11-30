@@ -114,11 +114,18 @@ export default class Pokemon {
     let storage = [...JSON.parse(localStorage.getItem("lastViewed"))];
     
     let pokemon_obj_clone = Object.assign({}, this)
+
+    pokemon_obj_clone.dateViewed = new Date();
+
+    const stored_ids = [];
     
     for (let i = 0; i < storage.length; i++) {
       const stored = storage[i];
-      if(this.id === stored.id) storage.splice(storage[i], 1);
+
+      stored_ids.push(stored.id);
     }
+
+    if(stored_ids.indexOf(pokemon_obj_clone.id) > -1) storage.splice(stored_ids.indexOf(pokemon_obj_clone.id), 1);
 
     if(storage.length >= 6) {
       storage.splice(5, storage.length-1);

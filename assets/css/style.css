@@ -50,7 +50,6 @@
   border-radius: 0.4rem;
   padding: 0.3rem;
   padding-left: 0;
-  margin-bottom: 5rem;
 }
 .c-pokedex__searchInput {
   background-color: #FFFFFF;
@@ -85,6 +84,19 @@
   font-style: normal;
   margin: 0;
   width: 100%;
+}
+.c-pokedex__recent {
+  overflow-x: hidden;
+  padding-bottom: 1rem;
+}
+.c-pokedex__recentList {
+  display: grid;
+  grid-row: 10rem;
+  column-gap: 2rem;
+  padding-right: 0.1rem;
+}
+.c-pokedex__recentList > li {
+  padding-top: 2rem;
 }
 .c-pokedex__grid {
   width: 100%;
@@ -757,6 +769,15 @@ html label {
 }
 .-scrollx::-webkit-scrollbar {
   display: none;
+}
+
+.-mb {
+  margin-bottom: 5rem;
+}
+@media screen and (max-width: 991px) {
+  .-mb {
+    margin-bottom: 2.5rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

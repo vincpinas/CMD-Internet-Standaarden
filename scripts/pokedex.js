@@ -3,7 +3,8 @@ import { createEl, fetchGraphQL, typeColors, injectCSS } from "../scripts/helper
 
 export default class Pokedex {
     constructor() {
-        this.pokemon = []
+        this.pokemon = [];
+        this.lastViewed = JSON.parse(localStorage.getItem("lastViewed"));
 
         this.init();
     }
@@ -12,14 +13,15 @@ export default class Pokedex {
 
         this._registerSearchHandler();
 
-        this.fetchPokedexGQL().then(() => {
-            this.insertPokemon();
-        })
+        if(this.lastViewed && this.lastViewed.length > 0) {
+            this.insertLastViewed(this.lastViewed, document.querySelector(".c-pokedex__recentList"));
+        }
 
-        console.log(JSON.parse(localStorage.getItem("lastViewed")))
+        this.fetchPokedexGQL()
+            .then(() => this.insertPokemon(this.pokemon, document.querySelector(".c-pokedex__gridItems")));
     }
 
-    async fetchPokedexGQL(limit = 649, offset = 0) {
+    async fetchPokedexGQL(limit = 151, offset = 0) {
         const query = `
             query PokedexListQuery {
                     pokemon_v2_pokemon(limit: ${limit}, offset: ${offset}) {
@@ -45,8 +47,57 @@ export default class Pokedex {
         })
     }
 
-    insertPokemon() {
-        this.pokemon.forEach(pokemon => {
+    insertLastViewed(recents, container) {
+        const recents_css = `.c-pokedex__recentList{grid-template-columns: repeat(${recents.length}, minmax(15rem, 1fr));}`;
+
+        injectCSS(recents_css);
+
+        const sorted_recents = recents.sort((a, b) => {
+            return new Date(b.dateViewed) - new Date(a.dateViewed);
+        })
+
+        sorted_recents.forEach(recent => {
+            const types = this.getTypes(recent.pokemon);
+
+            const li = createEl("li", { class: "c-pokedex__cardWrapper" })
+
+            const card = createEl("div", { class: "c-pokedex__card", id: `recent__${recent.pokemon.name}` });
+
+            const a = createEl("a", { class: "", href: `pokemon.html?p=${recent.id}` })
+            const sprite = createEl("img", { class: "c-pokedex__cardSprite", alt: `${recent.pokemon.name} sprite`, src: this.getSprite(recent.pokemon) });
+
+            let number_string = "#" + recent.id
+            const number = createEl("p", { class: "c-pokedex__cardNumber", innerHTML: number_string })
+            const name = createEl("p", { class: "c-pokedex__cardName", innerHTML: recent.pokemon.name })
+            const typeRow = createEl("ul", { class: "c-pokedex__cardTypes" })
+
+            types.forEach(type => {
+                let li = createEl("li")
+                let typeSlot = createEl("p", { innerHTML: type })
+                typeSlot.style.background = typeColors[type]
+
+                li.appendChild(typeSlot)
+                typeRow.appendChild(li)
+            })
+
+            let max_inset = 6;
+            const css = `#recent__${recent.pokemon.name}:hover{box-shadow: -${max_inset / 2}px -${max_inset / 2}px inset ${typeColors[types[0]]},-${max_inset}px -${max_inset}px inset ${types[1] ? typeColors[types[1]] : typeColors[types[0]]};}`
+
+            injectCSS(css)
+
+            a.appendChild(sprite)
+            a.appendChild(number)
+            a.appendChild(name)
+            a.appendChild(typeRow)
+            card.appendChild(a)
+            li.appendChild(card)
+
+            container.appendChild(li);
+        })
+    }
+
+    insertPokemon(pokemons, container) {
+        pokemons.forEach(pokemon => {
             const card = createEl("li", { class: "c-pokedex__card", id: pokemon.name });
 
             const a = createEl("a", { class: "", href: `pokemon.html?p=${pokemon.id}` })
@@ -78,17 +129,23 @@ export default class Pokedex {
             a.appendChild(typeRow)
             card.appendChild(a)
 
-            document.querySelector(".c-pokedex__gridItems").appendChild(card)
+            container.appendChild(card)
         })
     }
 
     getTypes(pokemon) {
         let types = [];
 
-        pokemon.pokemon_v2_pokemontypes.forEach(type => {
-            types.push(type.pokemon_v2_type.name)
-        })
-
+        if(pokemon.pokemon_v2_pokemontypes) {
+            pokemon.pokemon_v2_pokemontypes.forEach(type => {
+                types.push(type.pokemon_v2_type.name)
+            })
+        } else {
+            pokemon.types.forEach(type => {
+                types.push(type.type.name)
+            })
+        }
+        
         return types;
     }
 

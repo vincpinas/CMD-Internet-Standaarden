@@ -23,14 +23,21 @@
     </header>
 
     <main class="c-pokedex">
-        <section role="search" class="c-pokedex__search">
+        <search class="c-pokedex__search">
             <h3>Search</h3>
-            <div>
+            <div class="-mb">
                 <input type="text" class="c-pokedex__searchInput" id="search" placeholder="Search by name..">
                 <ul class="c-pokedex__searchAutocomplete" id="autoComplete">
-
+                    
                 </ul>
             </div>
+        </search>
+
+        <section class="c-pokedex__recent -mb">
+            <h3>Recently viewed</h3>
+            <ul class="c-pokedex__recentList -scrollx">
+                
+            </ul>
         </section>
 
         <section role="main" class="c-pokedex__grid">

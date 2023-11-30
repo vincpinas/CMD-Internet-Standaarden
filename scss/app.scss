@@ -284,3 +284,11 @@ html {
         display: none;
     }
 }
+
+.-mb {
+    margin-bottom: 5rem;
+
+    @media #{$tablet-down} {
+        margin-bottom: 2.5rem;
+    }
+}
