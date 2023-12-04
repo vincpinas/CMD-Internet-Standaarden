@@ -300,6 +300,7 @@
 
 .c-additional {
   display: flex;
+  flex-direction: column;
   width: 100%;
 }
 .c-additional__typeChart {
@@ -544,8 +545,8 @@ html h2 {
   font-family: "PKMNRBYGSC";
   font-weight: 800;
   font-style: normal;
-  font-size: 40px;
-  line-height: 44px;
+  font-size: 34px;
+  line-height: 36px;
   margin-bottom: 1.5rem;
 }
 @media screen and (max-width: 767px) {
