@@ -366,6 +366,17 @@
   list-style: disc;
   max-width: 40rem;
 }
+.c-sources__list h2 {
+  font-size: 22px;
+  line-height: 28px;
+  margin-bottom: 0.15rem;
+}
+@media screen and (max-width: 767px) {
+  .c-sources__list h2 {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
 .c-sources__list li a {
   color: #F50022;
   transition: 0.35s;
@@ -651,6 +662,17 @@ html label {
     font-size: 12px;
     line-height: 16px;
   }
+}
+body footer,
+html footer {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body footer p,
+html footer p {
+  margin-top: auto;
 }
 
 .-bold {

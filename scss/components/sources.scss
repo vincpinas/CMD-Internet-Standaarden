@@ -8,6 +8,10 @@
         list-style: disc;
         max-width: 40rem;
 
+        & h2 {
+            @include h4;
+        }
+
         li a {
             color: $special-primary;
             transition: $transition-fast;

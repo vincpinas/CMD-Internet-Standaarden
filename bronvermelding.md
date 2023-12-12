@@ -19,3 +19,5 @@ https://github.com/vincpinas/CMD-Internet-Standaarden/
 3. https://www.dafont.com/pokemon.font
 4. https://thenounproject.com/icon/pixel-arrow-801787/
 5. https://imgur.com/vdjR6cZ
+5. https://www.30secondsofcode.org/js/s/inject-css/
+5. https://github.com/PokeAPI/pokeapi/blob/master/graphql/examples/node/pokemon.js

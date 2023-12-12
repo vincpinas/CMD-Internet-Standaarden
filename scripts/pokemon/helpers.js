@@ -1,4 +1,3 @@
-import { createEl } from "../helpers.js";
 import { fetchSprites } from "./queries.js";
 
 export function findNextEvolution(current_evolution) {
@@ -11,7 +10,7 @@ export function findNextEvolution(current_evolution) {
 
 export async function formatEvolutionChain(chain) {
     let baby = chain;
-    let teen = findNextEvolution(chain);
+    let teen = findNextEvolution(baby);
     let adult = findNextEvolution(teen);
     let formatted_chain = [];
 
@@ -47,23 +46,6 @@ export async function formatEvolutionChain(chain) {
             }
         }, 10);
     })
-}
-
-export function getElements(class_ref) {
-    class_ref.elements = {
-        loading: document.querySelector(".c-loading"),
-        sprite: document.querySelector(".c-pokemon__detailsSprite img"),
-        evolutions: document.querySelector(".c-pokemon__evolutionsList"),
-        evolutions_placeholder: document.querySelector(".c-pokemon__evolutionsList li p").parentElement,
-        details: {
-            name: { td: document.querySelector(".c-pokemon__detailsName td"), th: document.querySelector(".c-pokemon__detailsName th") },
-            id: { td: document.querySelector(".c-pokemon__detailsId td"), th: document.querySelector(".c-pokemon__detailsId th") },
-            types: { td: document.querySelector(".c-pokemon__detailsTypes td"), th: document.querySelector(".c-pokemon__detailsTypes th") },
-            height: { td: document.querySelector(".c-pokemon__detailsHeight td"), th: document.querySelector(".c-pokemon__detailsHeight th") },
-            weight: { td: document.querySelector(".c-pokemon__detailsWeight td"), th: document.querySelector(".c-pokemon__detailsWeight th") },
-            abilities: { td: document.querySelector(".c-pokemon__detailsAbilities td"), th: document.querySelector(".c-pokemon__detailsAbilities th") },
-        },
-    }
 }
 
 export function createItemUrl(item_name) {

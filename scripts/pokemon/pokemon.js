@@ -1,5 +1,5 @@
-import { createEl, typeColors } from "../helpers.js"
-import { createItemUrl, getElements } from "./helpers.js";
+import { createEl } from "../helpers.js"
+import { createItemUrl } from "./helpers.js";
 import { fetchEvolutionChain, fetchPokemonData } from "./queries.js"
 
 export default class Pokemon {
@@ -15,7 +15,7 @@ export default class Pokemon {
   init() {
     let pokemon_name = this.id;
 
-    getElements(this);
+    this.getElements();
 
     fetchPokemonData(pokemon_name, this)
       .then(() => fetchEvolutionChain(this.species.evolution_chain_id, this))
@@ -105,6 +105,23 @@ export default class Pokemon {
 
     this.elements.loading.classList.add("inactive");
   }
+
+  getElements() {
+    this.elements = {
+        loading: document.querySelector(".c-loading"),
+        sprite: document.querySelector(".c-pokemon__detailsSprite img"),
+        evolutions: document.querySelector(".c-pokemon__evolutionsList"),
+        evolutions_placeholder: document.querySelector(".c-pokemon__evolutionsList li p").parentElement,
+        details: {
+            name: { td: document.querySelector(".c-pokemon__detailsName td"), th: document.querySelector(".c-pokemon__detailsName th") },
+            id: { td: document.querySelector(".c-pokemon__detailsId td"), th: document.querySelector(".c-pokemon__detailsId th") },
+            types: { td: document.querySelector(".c-pokemon__detailsTypes td"), th: document.querySelector(".c-pokemon__detailsTypes th") },
+            height: { td: document.querySelector(".c-pokemon__detailsHeight td"), th: document.querySelector(".c-pokemon__detailsHeight th") },
+            weight: { td: document.querySelector(".c-pokemon__detailsWeight td"), th: document.querySelector(".c-pokemon__detailsWeight th") },
+            abilities: { td: document.querySelector(".c-pokemon__detailsAbilities td"), th: document.querySelector(".c-pokemon__detailsAbilities th") },
+        },
+    }
+}
 
   addToLastViewed() {
     if(!localStorage.getItem("lastViewed")) {
